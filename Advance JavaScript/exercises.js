@@ -46,3 +46,72 @@ var jack = new Person("Jack", 25);
 var jill = new Person("Jill", 24);
 console.log(jack.describe());
 console.log(jill.describe());
+
+/* Ex-4 Create bound copies of printFullName and printDetails to person called 
+boundPrintFullName and boundPrintDetails.*/
+
+var person = {
+    firstName : "John",
+    lastName : "Smith",
+    age : 23
+};
+function printFullName()
+{
+    console.log(this.firstName + " " + this.lastName);
+}
+function printDetails()
+{
+    console.log(this.firstName + " is " + this.age + " years old");
+}
+var boundPrintFullName=printFullName.bind(person);
+var boundPrintDetails=printDetails.bind(person);
+boundPrintFullName();
+boundPrintDetails();
+
+
+/*Ex-5 Create an object called Teacher derived from the Person class, 
+and implement a method called teach which receives a string called subject,
+and prints out:
+[teacher's name] is now teaching [subject]
+var Person = function() {};*/
+
+Person.prototype.initialize = function(name, age)
+{
+    this.name = name;
+    this.age = age;
+}
+var Teacher=function(){};
+Teacher.prototype=new Person();
+Teacher.prototype.teach=function(subject)
+{
+    console.log(this.name + " is now teaching "+ subject); 
+}
+var him = new Teacher();
+him.initialize("Adam", 45);
+him.teach("Inheritance");
+
+/*Get the legs property and get the data inside the third position 
+of numbers using destructuring. Give it the names of myLegs and thirdPosition 
+respectively.*/
+
+const p = {
+    head: {
+        eyes: 'x',
+        mouth: {
+            teeth: 'x',
+            tongue: 'x'
+        }
+    },
+    body: {
+        shoulders: 'x',
+        chest: 'x',
+        arms: 'x',
+        hands: 'x',
+        legs: 'x'
+    }   
+};
+const numbers = ['2', '3', '4'];
+let { body: { legs: myLegs } } = p;
+let [first, second, thirdPosition] = numbers;
+console.log(myLegs);
+console.log(thirdPosition);
