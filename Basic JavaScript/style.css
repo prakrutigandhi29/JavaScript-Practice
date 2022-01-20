@@ -1,0 +1,59 @@
+body{
+    margin:auto;
+    background: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    background: rgb(206, 247, 173);
+    margin:auto;
+    text-align:center;
+    height:300px;
+    width:50%;
+
+}
+#form{
+    font-size: 20px;
+    display:flex;
+    flex-flow: column;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+#form input{
+    display:block;
+    margin:auto;
+    border:2px solid #111;
+    width:150px;
+    height:20px;
+    margin-bottom:50px;
+}
+.container h1{
+    text-align: center;
+}
+.list{
+    background: rgb(140, 168, 111);
+    height:150px;
+    width:40%;
+    text-align:center;
+    margin:auto;
+}
+.list h2
+{
+    font-size:15px;
+}
+.list ul {
+    list-style: none;
+    margin:auto;
+    
+   }
+.list ul li{
+   
+    background: white;
+    border: 1px solid black;
+    padding:10px;
+    margin-bottom: 20px;
+    display:block;
+}
+.msg{
+    color:red;
+    font-size:12px;
+}
